@@ -13,10 +13,11 @@ def connectToWifiAndUpdate():
         while not sta_if.isconnected():
             pass
     print('network config:', sta_if.ifconfig())
-    otaUpdater = OTAUpdater('https://github.com/sujoy743175/Esp32projects', main_dir='app', secrets_file="secrets.py")
+    otaUpdater = OTAUpdater('https://github.com/sujoy743175/esp', main_dir='app', secrets_file="secrets.py")
     hasUpdated = otaUpdater.install_update_if_available()
     if hasUpdated:
         machine.reset()
     else:
         del(otaUpdater)
         gc.collect()
+
