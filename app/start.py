@@ -1,1 +1,3 @@
-print('now its working..') 
+def start():
+    print('now its working..') 
+
