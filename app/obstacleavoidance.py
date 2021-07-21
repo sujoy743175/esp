@@ -1,7 +1,10 @@
 from machine import Pin, PWM
+from HCSR_04 import distance_cm
+
 
 import time
 #import utime
+
 inputPin = Pin(2, Pin.IN)
 inputPinR = Pin(33, Pin.IN)
 motorLPin1 = Pin(27, Pin.OUT)
@@ -54,6 +57,8 @@ def turn_left():
 def avoid():
     
     while True:
+
+        distance_cm()
         
         if (inputPin.value() == 1 and inputPinR.value() == 1):
             move_forward()
