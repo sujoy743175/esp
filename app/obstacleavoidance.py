@@ -1,5 +1,5 @@
 from machine import Pin, PWM
-from HCSR_04 import distance_cm
+from app.HCSR_04 import *
 
 
 import time
@@ -102,5 +102,6 @@ def avoid():
             turn_right()    
             print("moving right") 
             
+
 
 
